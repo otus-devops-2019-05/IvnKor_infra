@@ -9,7 +9,7 @@ IvnKor Infra repository
  - Пункт 1
  - Пункт 2
 
-## Подключениt к someinternalhost в одну команду
+## Подключение к someinternalhost в одну команду
 Для подключения к виртуальной машине someinternalhost в одну
 команду из вашего рабочего устройства, используем опцию ProxyJump. Вводим команду с ключом -J
 ```shell
