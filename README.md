@@ -56,3 +56,40 @@ https://35.187.58.38.sslip.io
 ## PR checklist
  - [x] Выставил label с номером домашнего задания
  - [x] Выставил label с темой домашнего задания
+
+# Выполнено ДЗ №4
+
+ - [x] Основное ДЗ
+ - [x] Задание со *
+
+## В процессе сделано:
+ - Установили и настроили gcloud на локальной машине для работы с аккаунтом
+ - Создали инстанс с помощью gcloud
+ - Установили на нем ruby & mongoDB
+ - Задеплоили тестовое приложение, запустили и проверили его
+ - Открыли необходимый порт в файрволе и научились создавать правило для него через gcloud
+ - Создали скрипты для установки ruby & mongoDB, деплоя приложения
+ - Создали скрипт для создания инстанса с установкой ruby & mongoDB и деплоя приложения
+ ## Testapp check
+```
+testapp_IP = 35.242.137.231
+testapp_port = 9292
+```
+## Создание инстанса с деплоем приложения с помощью startup-script
+gcloud compute instances create reddit-app \ 
+```shell
+--boot-disk-size=10GB \
+--image-family ubuntu-1604-lts \
+--image-project=ubuntu-os-cloud \
+--machine-type=g1-small \
+--tags puma-server \
+--restart-on-failure \
+--metadata-from-file startup-script=startup_script.sh
+```
+## Создание правила брандмауэра для приложения puma-server
+```shell
+gcloud compute firewall-rules create default-puma-server --allow tcp:9292 --source-ranges="0.0.0.0/0" --target-tags=puma-server
+```
+## PR checklist
+ - [x] Выставил label с номером домашнего задания
+ - [x] Выставил label с темой домашнего задания
