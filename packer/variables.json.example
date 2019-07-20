@@ -1,11 +1,16 @@
 {
-	"project_id": "infra-example",
-	"source_image_family": "ubuntu-1604-lts",
-	"machine_type": "g1-small",
-	"disk_type": "pd-standard",
-	"disk_size": "10",
-	"image_description": "information about image",
-	"ssh_username": "test",
-	"zone": "us-central1-a"
-	"tags": "test-server"
-}
+  "builders": [
+    {
+      "type": "googlecompute",
+      "project_id": "infra-7909454",
+      "source_image_family": "ubuntu-1604-lts",
+      "disk_size": "10",
+      "disk_type": "pd-standard",
+      "image_description": "decisive advantage",
+      "network": "default",
+      "ssh_username": "ubuntu",
+      "zone": "us-central1-a",	
+      "tags": "puma-server"
+    }
+   ]
+  }	
