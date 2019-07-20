@@ -107,14 +107,13 @@ gcloud compute firewall-rules create default-puma-server --allow tcp:9292 --sour
 ➜  ~ export PATH="$PATH:/usr/local/packer"
 ➜  ~ cd /usr/bin 
 ➜  bin sudo ln -s /usr/local/packer/packer packer
-[sudo] password for osboxes: 
 ➜  bin packer
 /usr/share/cracklib/pw_dict.pwd: Permission denied
 /usr/share/cracklib/pw_dict: Permission denied
 ```
 лечится
 ```shell
-➜  packer cd /usr/sbin/ 
+➜  cd /usr/sbin/ 
 ➜  sbin sudo mv packer packers
 ```
 ## Как запустить проект:
