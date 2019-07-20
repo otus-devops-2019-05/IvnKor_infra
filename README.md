@@ -93,3 +93,36 @@ gcloud compute firewall-rules create default-puma-server --allow tcp:9292 --sour
 ## PR checklist
  - [x] Выставил label с номером домашнего задания
  - [x] Выставил label с темой домашнего задания
+
+# Выполнено ДЗ №5
+
+ - [ ] Основное ДЗ
+ - [ ] Задание со *
+
+## В процессе сделано:
+ - Пункт 1
+ - Пункт 2
+## В процессе столкнулся:
+```shell
+➜  ~ export PATH="$PATH:/usr/local/packer"
+➜  ~ cd /usr/bin 
+➜  bin sudo ln -s /usr/local/packer/packer packer
+[sudo] password for osboxes: 
+➜  bin packer
+/usr/share/cracklib/pw_dict.pwd: Permission denied
+/usr/share/cracklib/pw_dict: Permission denied
+```
+лечится
+```shell
+➜  packer cd /usr/sbin/ 
+➜  sbin sudo mv packer packers
+```
+## Как запустить проект:
+ - Например, запустить команду X в директории Y
+
+## Как проверить работоспособность:
+ - Например, перейти по ссылке http://localhost:8080
+
+## PR checklist
+ - [ ] Выставил label с номером домашнего задания
+ - [ ] Выставил label с темой домашнего задания
