@@ -96,12 +96,19 @@ gcloud compute firewall-rules create default-puma-server --allow tcp:9292 --sour
 
 # Выполнено ДЗ №5
 
- - [ ] Основное ДЗ
- - [ ] Задание со *
+ - [x] Основное ДЗ
+ - [x] Задание со *
 
 ## В процессе сделано:
- - Пункт 1
- - Пункт 2
+ - Установлен Packer
+ - Предоставлены credentials
+ - Создан шаблон ubuntu16.json с предустановленными Ruby & MongoDB
+ - Проведена валидация шаблона
+ - Произведен билд инстанса
+ - Произведен деплой тестового приложения
+ - Создан файл variables.json.example
+ - Выполнено задание со *
+
 ## В процессе столкнулся:
 ```shell
 ➜  ~ export PATH="$PATH:/usr/local/packer"
@@ -116,12 +123,6 @@ gcloud compute firewall-rules create default-puma-server --allow tcp:9292 --sour
 ➜  cd /usr/sbin/ 
 ➜  sbin sudo mv packer packers
 ```
-## Как запустить проект:
- - Например, запустить команду X в директории Y
-
-## Как проверить работоспособность:
- - Например, перейти по ссылке http://localhost:8080
-
 ## PR checklist
- - [ ] Выставил label с номером домашнего задания
- - [ ] Выставил label с темой домашнего задания
+ - [x] Выставил label с номером домашнего задания
+ - [x] Выставил label с темой домашнего задания
