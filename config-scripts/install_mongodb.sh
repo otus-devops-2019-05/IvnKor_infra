@@ -9,7 +9,7 @@ apt install -y mongodb-org
 systemctl start mongod
 systemctl enable mongod
 
-COMMAND='sudo systemctl status mongod'
+COMMAND='systemctl status mongod'
 if $COMMAND | grep -q 'active (running)'; then
 	echo "mongod is up and running"
 else
