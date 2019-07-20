@@ -11,3 +11,12 @@ else
         echo "error: ruby  installation failed" >&2
 
 fi
+
+bundler -v
+echo $?
+if [ $? -eq 0 ]; then
+        echo "bundler  installation successfull"
+else
+        echo "error: bundler  installation failed" >&2
+
+fi
