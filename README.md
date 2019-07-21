@@ -93,3 +93,36 @@ gcloud compute firewall-rules create default-puma-server --allow tcp:9292 --sour
 ## PR checklist
  - [x] Выставил label с номером домашнего задания
  - [x] Выставил label с темой домашнего задания
+
+# Выполнено ДЗ №5
+
+ - [x] Основное ДЗ
+ - [x] Задание со *
+
+## В процессе сделано:
+ - Установлен Packer
+ - Предоставлены credentials
+ - Создан шаблон ubuntu16.json с предустановленными Ruby & MongoDB
+ - Проведена валидация шаблона
+ - Произведен билд инстанса
+ - Произведен деплой тестового приложения
+ - Создан файл variables.json.example
+ - Выполнено задание со *
+
+## В процессе столкнулся:
+```shell
+➜  ~ export PATH="$PATH:/usr/local/packer"
+➜  ~ cd /usr/bin 
+➜  bin sudo ln -s /usr/local/packer/packer packer
+➜  bin packer
+/usr/share/cracklib/pw_dict.pwd: Permission denied
+/usr/share/cracklib/pw_dict: Permission denied
+```
+лечится
+```shell
+➜  cd /usr/sbin/ 
+➜  sbin sudo mv packer packers
+```
+## PR checklist
+ - [x] Выставил label с номером домашнего задания
+ - [x] Выставил label с темой домашнего задания

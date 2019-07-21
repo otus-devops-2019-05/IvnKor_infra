@@ -3,19 +3,26 @@
 sudo apt update
 sudo apt install -y ruby-full ruby-bundler build-essential
 
-COMMAND='ruby -v'
-if $COMMAND | grep -q 'command not found'; then
-	echo "error: ruby  installation failuire"
+ruby -v
+echo $?
+if [ $? -eq 0 ]; then
+        echo "ruby  installation successfull"
 else
-	echo "error: ruby  installation successfull"
+        echo "error: ruby  installation failed" >&2
+
 fi
 
-COMMAND='bundler -v'
-if $COMMAND | grep -q 'command not found'; then
-	echo "error: bundler installation failuire"
+
+
+bundler -v
+echo $?
+if [ $? -eq 0 ]; then
+        echo "bundler  installation successfull"
 else
-	echo "error: bundler installation successfull"
+        echo "error: bundler  installation failed" >&2
+
 fi
+
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
 sudo bash -c 'echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" > /etc/apt/sources.list.d/mongodb-org-3.2.list'
@@ -26,12 +33,15 @@ sudo apt install -y mongodb-org
 sudo systemctl start mongod
 sudo systemctl enable mongod
 
-COMMAND='sudo systemctl status mongod'
-if $COMMAND | grep -q 'active (running)'; then
-	echo "mongod is up and running"
+sudo systemctl status mongod
+
+echo $?
+if [ $? -eq 0 ]; then
+        echo "mongod is up and running"
 else
-	echo "mongod is NOT up and NOT running"
+        echo "mongod is NOT up and NOT running" >&2
 fi
+
 
 cd ~
 git clone -b monolith https://github.com/express42/reddit.git
